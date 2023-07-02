@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('head') %>
+
+		<title>Movie Project</title>
+	</head>
+	<body>
+		<h1>Welcome to movies</h1>
+		<form action="/search" method="POST">
+			<label for="movieSearchTerm">Search</label>
+			<input type="text" name="movieSearchTerm" id="movieSearchTerm" />
+			<button type="submit">Search</button>
+		</form>
+		<p>Now playing</p>
+		<div class="container">
+			<% for (movie of movies) { %>
+			<div class="row">
+				<a href="movies/<%= movie.id %>">
+					<img
+						src="<%= imageBaseUrl + movie.poster_path %>"
+						alt="<%= movie.title %>"
+					/>
+				</a>
+				<p>Title: <%= movie.title %></p>
+				<p>Overview: <%= movie.overview %></p>
+			</div>
+			<% } %>
+		</div>
+	</body>
+</html>

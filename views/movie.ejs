@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('head') %>
+		<title>Movie Details</title>
+	</head>
+	<body>
+		<div class="movie-details">
+			<div class="row">
+				<h1><%= movieDetails.title %></h1>
+				<img src="<%= imageBaseUrl + movieDetails.poster_path %>" alt="" />
+				<p><%= movieDetails.tagline %></p>
+				<p><%= movieDetails.overview %></p>
+				<p>Release Date: <%= movieDetails.release_date %></p>
+				<p>Rating: <%= movieDetails.vote_average %></p>
+				<p>
+					<a href="<%= movieDetails.homepage %>" target="_blank">Learn More</a>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
